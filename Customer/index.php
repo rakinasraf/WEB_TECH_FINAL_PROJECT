@@ -7,7 +7,7 @@ $action = $_GET['action'] ?? 'home';
 
 switch ($action) {
 
-    // ── PUBLIC ────────────────────────────────────────────────────────
+   
     case 'home':
         include "views/auth/home.php";
         break;
@@ -39,7 +39,7 @@ switch ($action) {
         logout();
         break;
 
-    // ── PRODUCTS (public) ─────────────────────────────────────────────
+   
     case 'products':
         require_once "controllers/ProductController.php";
         index();
@@ -50,7 +50,7 @@ switch ($action) {
         details($_GET['id'] ?? 0);
         break;
 
-    // ── CUSTOMER (protected) ──────────────────────────────────────────
+    
     case 'dashboard':
         checkAuth();
         include "views/customer/dashboard.php";
@@ -97,7 +97,7 @@ switch ($action) {
         deleteAddress();
         break;
 
-    // ── CART ──────────────────────────────────────────────────────────
+    
     case 'cart':
         require_once "controllers/CartController.php";
         cartView();
@@ -119,7 +119,7 @@ switch ($action) {
         removeItem($_POST['product_id'] ?? 0);
         break;
 
-    // ── ORDERS ────────────────────────────────────────────────────────
+    
     case 'checkout':
         checkAuth();
         require_once "controllers/OrderController.php";
@@ -174,7 +174,7 @@ switch ($action) {
         openDispute();
         break;
 
-    // ── REVIEWS ───────────────────────────────────────────────────────
+    
     case 'submit_review':
         checkAuth();
         require_once "controllers/ReviewController.php";
@@ -193,7 +193,7 @@ switch ($action) {
         deleteReview();
         break;
 
-    // ── WISHLIST ──────────────────────────────────────────────────────
+    
     case 'wishlist':
         checkAuth();
         require_once "models/Wishlist.php";
@@ -202,7 +202,7 @@ switch ($action) {
         include "views/customer/wishlist.php";
         break;
 
-    // ── AJAX ──────────────────────────────────────────────────────────
+    
     case 'ajax':
         require_once "controllers/AjaxController.php";
         break;
