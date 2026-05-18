@@ -34,7 +34,6 @@
     <h2>Admin Gateway</h2>
     <p>Please log in to manage marketplace systems.</p>
 
-    <!-- Error Alert Messaging Banner output dynamically inside AuthController validation context loops -->
     <?php if (isset($error) && !empty($error)): ?>
         <div class="alert">
             ❌ <?php echo htmlspecialchars($error); ?>
