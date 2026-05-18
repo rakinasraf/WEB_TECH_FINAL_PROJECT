@@ -54,6 +54,7 @@
         
         <button type="submit" class="btn-submit">Authenticate Securely</button>
     </form>
+    <br><button class="btn-submit"><a href="../main.php" class="btn-submit">Home</a></button>
 </div>
 
 </body>
