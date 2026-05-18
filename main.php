@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dashboard</title>
+<title>Home Page</title>
 </head>
 <body>
 <div class="navbar">
