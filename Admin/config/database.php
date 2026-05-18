@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "e-commerce_store";
+    private $db_name = "ecommercestore";
     private $username = "root";
     private $password = "";
     public $conn;
@@ -9,7 +9,7 @@ class Database {
     public function getConnection() {
         $this->conn = null;
         try {
-            $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name);
+            $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name,3307);
             if ($this->conn->connect_error) {
                 die("Connection failed: " . $this->conn->connect_error);
             }
