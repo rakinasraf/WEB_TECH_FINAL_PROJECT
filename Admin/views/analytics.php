@@ -1,5 +1,5 @@
 <h2>📈 Extended Platform Performance Charts Matrix</h2>
-<p style="margin-bottom:20px; color:#7f8c8d;">Detailed visual breakdowns of system gross merchandise value transactions.</p>
+<p style="margin-bottom:20px; color:#7f8c8d;">.</p>
 
 <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
     <div style="background:#fff; padding:25px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
