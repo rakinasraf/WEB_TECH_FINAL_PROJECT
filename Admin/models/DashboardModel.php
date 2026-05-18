@@ -6,20 +6,33 @@ class DashboardModel {
         $this->db = $dbConnection;
     }
 
-    public function getUserStats() {
-        $query = "SELECT role, COUNT(*) as total FROM users GROUP BY role";
+   public function getUserStats() {
+       
+        $query = "SELECT 
+                    SUM(CASE WHEN role = 'customer' AND is_active = 1 THEN 1 ELSE 0 END) as customer,
+                    SUM(CASE WHEN role = 'seller' AND is_active = 1 THEN 1 ELSE 0 END) as seller,
+                    SUM(CASE WHEN role = 'delivery_manager' AND is_active = 1 THEN 1 ELSE 0 END) as delivery_manager
+                  FROM users";
+                  
         $result = mysqli_query($this->db, $query);
-        $stats = ['customer' => 0, 'seller' => 0, 'delivery_manager' => 0, 'admin' => 0];
-        while ($row = mysqli_fetch_assoc($result)) {
-            if (array_key_exists($row['role'], $stats)) {
-                $stats[$row['role']] = $row['total'];
-            }
+        
+        if ($result) {
+            $data = mysqli_fetch_assoc($result);
+            
+           
+            return [
+                'customer'         => (int)($data['customer'] ?? 0),
+                'seller'           => (int)($data['seller'] ?? 0),
+                'delivery_manager' => (int)($data['delivery_manager'] ?? 0)
+            ];
         }
-        return $stats;
+        
+    
+        return ['customer' => 0, 'seller' => 0, 'delivery_manager' => 0];
     }
 
     public function getRevenueStats() {
-        // Automatically tallies revenue from orders and tracks admin commissions
+       
         $query = "SELECT 
                     SUM(total_amount) as gv, 
                     SUM(discount_amount) as discounts,
