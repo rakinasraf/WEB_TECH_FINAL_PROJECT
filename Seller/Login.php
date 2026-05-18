@@ -8,6 +8,7 @@
 <div class="navbar">
 <h2>Seller Login</h2>
 <a href="Register.php" class="btn btn-delete">Register</a>
+<a href="../main.php" class="btn btn-delete">Home</a>
 </div>
 <div class="container">
 <form action="AuthController.php" method="POST">
