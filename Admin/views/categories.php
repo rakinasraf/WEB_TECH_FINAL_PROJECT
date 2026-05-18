@@ -1,5 +1,5 @@
 <h2>📁 System Categories Mapping Structure</h2>
-<p style="margin-bottom:20px; color:#7f8c8d;">Configuring dynamic infinite multi-tier catalog nesting vectors.</p>
+<p style="margin-bottom:20px; color:#7f8c8d;">.</p>
 
 <div style="background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.05);">
     <table width="100%" cellpadding="10" cellspacing="0">
