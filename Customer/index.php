@@ -206,6 +206,10 @@ switch ($action) {
     case 'ajax':
         require_once "controllers/AjaxController.php";
         break;
+    
+    case 'main':
+        include "../main.php";
+        break;
 
     default:
         echo "<h2 style='font-family:Arial;text-align:center;margin-top:80px;'>404 — Page Not Found</h2>";

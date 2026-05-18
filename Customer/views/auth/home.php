@@ -70,6 +70,7 @@
 
     <p style="color:white; margin-top:20px; font-size:13px;">
         Just browsing? <a href="index.php?action=products" style="color:white; font-weight:bold;">View Products</a>
+        <br><br><a href="../main.php" style="color:white; font-weight:bold;">Home</a>
     </p>
 
 </body>
