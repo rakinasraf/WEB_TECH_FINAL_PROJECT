@@ -28,6 +28,17 @@ switch ($action) {
         break;
         
  
+    case 'add_seller':
+        $authController->verifySession();
+        $adminController->addSeller();
+        break;
+
+    case 'delete_seller':
+        $authController->verifySession();
+        $adminController->removeSeller();
+        break;
+   
+
     case 'sellers':
         $authController->verifySession();
         $adminController->showSellers();
@@ -56,7 +67,21 @@ switch ($action) {
         $authController->verifySession();
         $adminController->showAnalytics();
         break;
-        
+    case 'delete_product':
+        $authController->verifySession();
+        $adminController->removeProduct();
+        break;  
+   
+
+    case 'add_coupon':
+        $authController->verifySession();
+        $adminController->addCoupon();
+        break;
+
+    case 'delete_coupon':
+        $authController->verifySession();
+        $adminController->removeCoupon();
+        break;  
     default:
         header("HTTP/1.0 404 Not Found");
         echo "Module interface view panel route does not exist.";
