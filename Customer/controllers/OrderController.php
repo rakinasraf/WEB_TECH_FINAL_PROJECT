@@ -59,7 +59,7 @@ function placeOrder() {
         exit();
     }
 
-    // Server-side total calculation — never trust client total
+    
     $productModel = new Product($conn);
     $rows         = $productModel->getByIds(array_keys($cart));
     $products     = [];
