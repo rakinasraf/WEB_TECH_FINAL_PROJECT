@@ -3,7 +3,7 @@
 require_once __DIR__ . "/../models/db.php";
 require_once __DIR__ . "/../models/User.php";
 
-// ── LOGIN ─────────────────────────────────────────────────────────────
+
 function login() {
 
     $email    = trim($_POST['email']    ?? '');
@@ -40,10 +40,10 @@ function login() {
     exit();
 }
 
-// ── REGISTER ──────────────────────────────────────────────────────────
+
 function register() {
 
-    // Carry form values back on error
+   
     $name     = trim($_POST['name']     ?? '');
     $email    = trim($_POST['email']    ?? '');
     $phone    = trim($_POST['phone']    ?? '');
@@ -51,7 +51,7 @@ function register() {
 
     $nameErr = $emailErr = $phoneErr = $passErr = '';
 
-    // Validate — same style as your original register.php
+    
     if (empty($name)) {
         $nameErr = "Name is required.";
     } elseif (!preg_match("/^[a-zA-Z-' ]+$/", $name)) {
@@ -76,7 +76,7 @@ function register() {
         $passErr = "Password must be at least 6 characters.";
     }
 
-    // If any error, send back with values
+   
     if ($nameErr || $emailErr || $phoneErr || $passErr) {
         $_SESSION['reg_errors'] = compact('nameErr','emailErr','phoneErr','passErr');
         $_SESSION['reg_old']    = compact('name','email','phone');
@@ -84,7 +84,7 @@ function register() {
         exit();
     }
 
-    // Check duplicate email
+    
     global $conn;
     $userModel = new User($conn);
 
@@ -101,14 +101,14 @@ function register() {
     exit();
 }
 
-// ── LOGOUT ────────────────────────────────────────────────────────────
+
 function logout() {
     session_destroy();
     header("Location: index.php?action=login");
     exit();
 }
 
-// ── UPDATE PROFILE ────────────────────────────────────────────────────
+
 function updateProfile() {
     global $conn;
 
@@ -149,7 +149,7 @@ function updateProfile() {
     exit();
 }
 
-// ── CHANGE PASSWORD ───────────────────────────────────────────────────
+
 function uploadProfilePicture() {
     global $conn;
 
