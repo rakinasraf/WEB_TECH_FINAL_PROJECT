@@ -73,7 +73,6 @@
                 try {
                     const response = JSON.parse(xhr.responseText);
                     if (response.success) {
-                        // Dynamic slide update out of view parameters
                         buttonElement.parentElement.innerHTML = '<span style="color: #2ecc71; font-weight: bold;">✓ Approved Successfully</span>';
                     } else {
                         alert("Error: " + response.message);

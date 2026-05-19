@@ -11,7 +11,6 @@ class UserModel {
             die("DATABASE ERROR: Connection instance missing.");
         }
 
-        // 1. Hardcoded Local Fallback Loop for immediate development recovery
         if ($email === 'admin@ecommerce.com' && $password === 'admin123') {
             return [
                 'id' => 1,
@@ -21,7 +20,6 @@ class UserModel {
             ];
         }
 
-        // 2. Standard Production Database Query Matrix
         $query = "SELECT id, name, email, password_hash, role FROM users WHERE email = ? LIMIT 1";
         $stmt = mysqli_prepare($this->db, $query);
         
