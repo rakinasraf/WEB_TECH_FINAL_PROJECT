@@ -6,6 +6,7 @@ class Database
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $dbname = DB_NAME;
+    private $dbport = DB_PORT;
 
     public $conn;
 
@@ -20,7 +21,8 @@ class Database
             $this->host,
             $this->user,
             $this->pass,
-            $this->dbname
+            $this->dbname,
+            $this->dbport
         );
 
         if ($this->conn->connect_error)
